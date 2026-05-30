@@ -1,4 +1,4 @@
-import { Component, computed, input } from "@angular/core";
+import { Component, input } from "@angular/core";
 import { Skill } from "../../../models/content.model";
 import { ScrollRevealDirective } from "../../../shared/directives/scroll-reveal.directive";
 
