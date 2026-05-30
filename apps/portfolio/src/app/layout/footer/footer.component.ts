@@ -1,16 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, Input } from "@angular/core";
+import { FooterLink } from "../../models/content.model";
 
 @Component({
-  selector: 'app-footer',
+  selector: "app-footer",
   standalone: true,
-  templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.scss'],})
+  templateUrl: "./footer.component.html",
+  styleUrls: ["./footer.component.scss"],
+})
 export class FooterComponent {
   readonly year = new Date().getFullYear();
 
-  readonly socialLinks = [
-    { label: 'GitHub', url: 'https://github.com' },
-    { label: 'LinkedIn', url: 'https://linkedin.com' },
-    { label: 'Twitter', url: 'https://twitter.com' },
+  socialLinks: FooterLink[] = [
+    {
+      id: "f1",
+      label: "GitHub",
+      url: "https://github.com/somasundar-dev",
+    },
+    {
+      id: "f2",
+      label: "LinkedIn",
+      url: "https://www.linkedin.com/in/somasundar-s",
+    },
   ];
 }

@@ -1,22 +1,18 @@
-import { Component, inject, signal } from '@angular/core';
-import { ContentService } from '../../services/content.service';
-import { PublicContent } from '../../models/content.model';
-import { HeaderComponent } from '../../layout/header/header.component';
-import { FooterComponent } from '../../layout/footer/footer.component';
-import { HeroComponent } from './hero/hero.component';
-import { AboutComponent } from './about/about.component';
-import { SkillsComponent } from './skills/skills.component';
-import { ProjectsComponent } from './projects/projects.component';
-import { ExperienceComponent } from './experience/experience.component';
-import { GithubSectionComponent } from './github/github-section.component';
-import { ContactComponent } from '../contact/contact.component';
+import { Component, inject, signal } from "@angular/core";
+import { ContentService } from "../../services/content.service";
+import { PublicContent } from "../../models/content.model";
+import { HeroComponent } from "./hero/hero.component";
+import { AboutComponent } from "./about/about.component";
+import { SkillsComponent } from "./skills/skills.component";
+import { ProjectsComponent } from "./projects/projects.component";
+import { ExperienceComponent } from "./experience/experience.component";
+import { GithubSectionComponent } from "./github/github-section.component";
+import { ContactComponent } from "../contact/contact.component";
 
 @Component({
-  selector: 'app-home',
+  selector: "app-home",
   standalone: true,
   imports: [
-    HeaderComponent,
-    FooterComponent,
     HeroComponent,
     AboutComponent,
     SkillsComponent,
@@ -25,8 +21,9 @@ import { ContactComponent } from '../contact/contact.component';
     GithubSectionComponent,
     ContactComponent,
   ],
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],})
+  templateUrl: "./home.component.html",
+  styleUrls: ["./home.component.scss"],
+})
 export class HomeComponent {
   private readonly contentService = inject(ContentService);
 

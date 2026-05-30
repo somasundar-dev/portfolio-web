@@ -61,6 +61,12 @@ export interface ContactDetail {
   published: boolean;
 }
 
+export interface FooterLink {
+  id: string;
+  label: string;
+  url: string;
+}
+
 export interface Testimonial {
   id: string;
   name: string;
