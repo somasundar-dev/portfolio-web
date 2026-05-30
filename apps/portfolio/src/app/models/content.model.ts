@@ -52,6 +52,15 @@ export interface ExperienceEntry {
   published: boolean;
 }
 
+export interface ContactDetail {
+  id: string;
+  type: "Email" | "Phone" | "Location";
+  value: string;
+  icon: string;
+  sortOrder: number;
+  published: boolean;
+}
+
 export interface Testimonial {
   id: string;
   name: string;
@@ -78,6 +87,7 @@ export interface PublicContent {
   projects: Project[];
   experience: ExperienceEntry[];
   testimonials: Testimonial[];
+  contactDetails: ContactDetail[];
 }
 
 export interface AnalyticsMetrics {

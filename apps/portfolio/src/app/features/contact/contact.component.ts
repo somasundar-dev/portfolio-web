@@ -1,7 +1,8 @@
-import { Component, inject, signal } from "@angular/core";
+import { Component, inject, Input, signal } from "@angular/core";
 import { FormBuilder, ReactiveFormsModule, Validators } from "@angular/forms";
 import { ContentService } from "../../services/content.service";
 import { ScrollRevealDirective } from "../../shared/directives/scroll-reveal.directive";
+import { ContactDetail } from "../../models/content.model";
 
 @Component({
   selector: "app-contact",
@@ -11,6 +12,14 @@ import { ScrollRevealDirective } from "../../shared/directives/scroll-reveal.dir
   styleUrls: ["./contact.component.scss"],
 })
 export class ContactComponent {
+  @Input() contactDetails: ContactDetail[] = [];
+
+  readonly iconMap: Record<string, string> = {
+    envelope: "✉️",
+    "map-marker": "📍",
+    phone: "📞",
+  };
+
   private readonly fb = inject(FormBuilder);
   private readonly contentService = inject(ContentService);
 

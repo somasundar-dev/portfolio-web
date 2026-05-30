@@ -232,4 +232,22 @@ export const SAMPLE_CONTENT: PublicContent = {
       published: true,
     },
   ],
+  contactDetails: [
+    {
+      id: "c1",
+      type: "Email",
+      value: "somasundar.dev@gmail.com",
+      icon: "envelope",
+      sortOrder: 1,
+      published: true,
+    },
+    {
+      id: "c2",
+      type: "Location",
+      value: "Chennai, Tamil Nadu, IN",
+      icon: "map-marker",
+      sortOrder: 2,
+      published: true,
+    },
+  ],
 };
