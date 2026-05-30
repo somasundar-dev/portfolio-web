@@ -12,7 +12,7 @@ export const SAMPLE_CONTENT: PublicContent = {
   },
   about: {
     id: "about-1",
-    bio: "I am a software engineer passionate about building robust backend systems and elegant cloud architectures. With 7 years of experience in .NET and Azure, I now deliver modern cloud-native solutions using Angular and AWS.",
+    bio: "I am a software engineer passionate about building robust backend systems and elegant cloud architectures. With 7 years of experience in .NET, Angular and AWS, I now deliver modern cloud-native solutions using Angular and AWS.",
     experienceSummary:
       "7 years delivering enterprise applications, microservices, and DevOps pipelines across finance and SaaS domains.",
     strengths: [
