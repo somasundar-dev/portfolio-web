@@ -4,7 +4,7 @@ import { PublicContent } from "../../models/content.model";
 import { HeroComponent } from "./hero/hero.component";
 import { AboutComponent } from "./about/about.component";
 import { SkillsComponent } from "./skills/skills.component";
-import { ProjectsComponent } from "./projects/projects.component";
+//import { ProjectsComponent } from "./projects/projects.component";
 import { ExperienceComponent } from "./experience/experience.component";
 import { GithubSectionComponent } from "./github/github-section.component";
 import { ContactComponent } from "../contact/contact.component";
@@ -16,7 +16,7 @@ import { ContactComponent } from "../contact/contact.component";
     HeroComponent,
     AboutComponent,
     SkillsComponent,
-    ProjectsComponent,
+    //ProjectsComponent,
     ExperienceComponent,
     GithubSectionComponent,
     ContactComponent,

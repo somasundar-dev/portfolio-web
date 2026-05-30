@@ -5,23 +5,15 @@
       <h2 class="section-title">Technical Expertise</h2>
     </div>
 
-    @for (category of categories(); track category) {
-      <div class="skills__category" appScrollReveal>
-        <h3 class="skills__category-title">{{ category }}</h3>
-        <div class="skills__grid">
-          @for (skill of getSkillsByCategory(category); track skill.id) {
-            <div class="glass-card skill-card">
-              <div class="skill-card__header">
-                <span class="skill-card__name">{{ skill.name }}</span>
-                <span class="skill-card__level">{{ skill.level }}%</span>
-              </div>
-              <div class="skill-card__bar">
-                <div class="skill-card__fill" [style.width.%]="skill.level"></div>
-              </div>
-            </div>
-          }
+    <div class="skills__grid">
+      @for (skill of skills(); track $index) {
+      <div class="glass-card skill-card">
+        <div class="skill-card__header">
+          <span class="skill-card__name">{{ skill.name }}</span>
+          <span class="skill-card__category">{{ skill.category }}</span>
         </div>
       </div>
-    }
+      }
+    </div>
   </div>
 </section>

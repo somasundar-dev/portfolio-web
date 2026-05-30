@@ -15,12 +15,9 @@ export interface AboutContent {
 }
 
 export interface Skill {
-  id: string;
   name: string;
-  category: "Backend" | "Cloud" | "DevOps" | "Frontend" | "Databases";
-  level: number;
+  category: string;
   sortOrder: number;
-  published: boolean;
 }
 
 export interface Project {
