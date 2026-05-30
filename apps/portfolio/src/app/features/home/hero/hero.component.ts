@@ -1,0 +1,201 @@
+import { Component, input } from '@angular/core';
+import { HeroContent } from '../../../models/content.model';
+import { CursorGlowDirective } from '../../../shared/directives/cursor-glow.directive';
+
+@Component({
+  selector: 'app-hero',
+  standalone: true,
+  imports: [CursorGlowDirective],
+  template: `
+    <section id="hero" class="hero" appCursorGlow>
+      <div class="hero__bg">
+        <div class="hero__gradient hero__gradient--1"></div>
+        <div class="hero__gradient hero__gradient--2"></div>
+        <div class="hero__gradient hero__gradient--3"></div>
+        <div class="hero__grid"></div>
+        <div class="hero__glow"></div>
+      </div>
+
+      <div class="hero__content container">
+        <p class="hero__greeting">Hello, I'm</p>
+        <h1 class="hero__name">{{ content().name }}</h1>
+        <p class="hero__title">{{ content().title }}</p>
+        <p class="hero__tagline">{{ content().tagline }}</p>
+
+        <div class="hero__actions">
+          <a href="#projects" class="btn btn--primary">{{ content().ctaPrimary }}</a>
+          <a href="#contact" class="btn btn--secondary">{{ content().ctaSecondary }}</a>
+        </div>
+
+        <div class="hero__scroll">
+          <span>Scroll to explore</span>
+          <div class="hero__scroll-line"></div>
+        </div>
+      </div>
+    </section>
+  `,
+  styles: [`
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      --cursor-x: 50%;
+      --cursor-y: 50%;
+    }
+
+    .hero__bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .hero__gradient {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.4;
+      animation: float 8s ease-in-out infinite;
+
+      &--1 {
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(circle, #3b82f6 0%, transparent 70%);
+        top: -10%;
+        left: -10%;
+      }
+
+      &--2 {
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(circle, #06b6d4 0%, transparent 70%);
+        bottom: -10%;
+        right: -5%;
+        animation-delay: -3s;
+      }
+
+      &--3 {
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(circle, #6366f1 0%, transparent 70%);
+        top: 40%;
+        left: 50%;
+        animation-delay: -5s;
+      }
+    }
+
+    .hero__grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(99, 179, 237, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(99, 179, 237, 0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse at center, black 20%, transparent 70%);
+    }
+
+    .hero__glow {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+      left: var(--cursor-x);
+      top: var(--cursor-y);
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      transition: left 0.15s ease, top 0.15s ease;
+    }
+
+    .hero__content {
+      position: relative;
+      z-index: 1;
+      padding: 8rem 0 4rem;
+    }
+
+    .hero__greeting {
+      font-family: var(--font-mono);
+      color: var(--color-accent);
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    .hero__name {
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 800;
+      line-height: 1.05;
+      background: var(--gradient-text);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: fadeInUp 0.8s ease 0.1s forwards;
+      opacity: 0;
+    }
+
+    .hero__title {
+      font-size: clamp(1.25rem, 3vw, 1.75rem);
+      color: var(--color-text-muted);
+      margin: 0.75rem 0 1.5rem;
+      animation: fadeInUp 0.8s ease 0.2s forwards;
+      opacity: 0;
+    }
+
+    .hero__tagline {
+      max-width: 600px;
+      font-size: 1.125rem;
+      line-height: 1.7;
+      color: var(--color-text-muted);
+      margin-bottom: 2.5rem;
+      animation: fadeInUp 0.8s ease 0.3s forwards;
+      opacity: 0;
+    }
+
+    .hero__actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      animation: fadeInUp 0.8s ease 0.4s forwards;
+      opacity: 0;
+    }
+
+    .hero__scroll {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--color-text-muted);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      animation: fadeInUp 0.8s ease 0.6s forwards;
+      opacity: 0;
+    }
+
+    .hero__scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, var(--color-accent), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(30px, -30px) scale(1.05); }
+      66% { transform: translate(-20px, 20px) scale(0.95); }
+    }
+
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.3; transform: scaleY(0.6); }
+      50% { opacity: 1; transform: scaleY(1); }
+    }
+  `],
+})
+export class HeroComponent {
+  readonly content = input.required<HeroContent>();
+}
