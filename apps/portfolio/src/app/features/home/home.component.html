@@ -1,0 +1,18 @@
+<app-header />
+
+@if (loading()) {
+  <div class="loading-screen">
+    <div class="loading-spinner"></div>
+  </div>
+} @else if (content()) {
+  <main>
+    <app-hero [content]="content()!.hero" />
+    <app-about [content]="content()!.about" />
+    <app-skills [skills]="content()!.skills" />
+    <app-projects [projects]="content()!.projects" />
+    <app-experience [experience]="content()!.experience" />
+    <app-github-section />
+    <app-contact />
+  </main>
+  <app-footer />
+}

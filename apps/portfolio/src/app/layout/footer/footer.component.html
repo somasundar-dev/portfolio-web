@@ -1,0 +1,18 @@
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <span class="footer__logo">&lt;Somasundar /&gt;</span>
+      <p class="footer__tagline">Building the future, one commit at a time.</p>
+    </div>
+
+    <div class="footer__social">
+      @for (link of socialLinks; track link.label) {
+        <a [href]="link.url" target="_blank" rel="noopener" class="footer__link" [attr.aria-label]="link.label">
+          {{ link.label }}
+        </a>
+      }
+    </div>
+
+    <p class="footer__copy">&copy; {{ year }} Somasundar. All rights reserved.</p>
+  </div>
+</footer>

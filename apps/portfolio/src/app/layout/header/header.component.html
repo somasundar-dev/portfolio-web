@@ -1,0 +1,22 @@
+<header class="header" [class.scrolled]="isScrolled()">
+  <div class="header__inner container">
+    <a href="#" class="header__logo" (click)="scrollTo('hero', $event)">
+      <span class="logo-accent">&lt;</span>S<span class="logo-accent">/&gt;</span>
+    </a>
+
+    <nav class="header__nav" [class.open]="menuOpen()">
+      @for (item of navItems; track item.id) {
+        <a
+          class="header__link"
+          [class.active]="activeSection() === item.id"
+          [href]="'#' + item.id"
+          (click)="scrollTo(item.id, $event)"
+        >{{ item.label }}</a>
+      }
+    </nav>
+
+    <button class="header__toggle" (click)="toggleMenu()" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>

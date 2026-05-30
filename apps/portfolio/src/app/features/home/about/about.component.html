@@ -1,0 +1,24 @@
+<section id="about" class="section about">
+  <div class="container">
+    <div class="section-header" appScrollReveal>
+      <span class="section-label">About Me</span>
+      <h2 class="section-title">Engineering with Purpose</h2>
+    </div>
+
+    <div class="about__grid">
+      <div class="glass-card about__bio" appScrollReveal>
+        <p>{{ content().bio }}</p>
+        <p class="about__summary">{{ content().experienceSummary }}</p>
+      </div>
+
+      <div class="about__strengths">
+        @for (strength of content().strengths; track strength; let i = $index) {
+          <div class="glass-card strength-card" appScrollReveal [style.animation-delay]="i * 0.1 + 's'">
+            <div class="strength-card__icon">{{ i + 1 }}</div>
+            <p>{{ strength }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>

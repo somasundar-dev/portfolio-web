@@ -25,48 +25,8 @@ import { ContactComponent } from '../contact/contact.component';
     GithubSectionComponent,
     ContactComponent,
   ],
-  template: `
-    <app-header />
-
-    @if (loading()) {
-      <div class="loading-screen">
-        <div class="loading-spinner"></div>
-      </div>
-    } @else if (content()) {
-      <main>
-        <app-hero [content]="content()!.hero" />
-        <app-about [content]="content()!.about" />
-        <app-skills [skills]="content()!.skills" />
-        <app-projects [projects]="content()!.projects" />
-        <app-experience [experience]="content()!.experience" />
-        <app-github-section />
-        <app-contact />
-      </main>
-      <app-footer />
-    }
-  `,
-  styles: [`
-    .loading-screen {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .loading-spinner {
-      width: 48px;
-      height: 48px;
-      border: 3px solid rgba(59, 130, 246, 0.2);
-      border-top-color: var(--color-accent);
-      border-radius: 50%;
-      animation: spin 0.8s linear infinite;
-    }
-
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-  `],
-})
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss'],})
 export class HomeComponent {
   private readonly contentService = inject(ContentService);
 

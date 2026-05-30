@@ -1,0 +1,53 @@
+<section id="projects" class="section projects">
+  <div class="container">
+    <div class="section-header" appScrollReveal>
+      <span class="section-label">Projects</span>
+      <h2 class="section-title">Featured Work</h2>
+    </div>
+
+    <div class="projects__grid">
+      @for (project of projects(); track project.id; let i = $index) {
+        <article class="glass-card project-card" appScrollReveal [class.featured]="project.featured">
+          @if (project.featured) {
+            <span class="project-card__badge">Featured</span>
+          }
+
+          <div class="project-card__header">
+            <h3 class="project-card__title">{{ project.title }}</h3>
+            @if (project.category) {
+              <span class="project-card__category">{{ project.category }}</span>
+            }
+          </div>
+
+          <p class="project-card__summary">{{ project.summary }}</p>
+
+          <div class="project-card__tech">
+            @for (tech of project.techStack; track tech) {
+              <span class="chip">{{ tech }}</span>
+            }
+          </div>
+
+          @if (project.impactMetrics.length) {
+            <div class="project-card__metrics">
+              @for (metric of project.impactMetrics; track metric.label) {
+                <div class="metric">
+                  <span class="metric__value">{{ metric.value }}</span>
+                  <span class="metric__label">{{ metric.label }}</span>
+                </div>
+              }
+            </div>
+          }
+
+          <div class="project-card__links">
+            @if (project.liveUrl) {
+              <a [href]="project.liveUrl" target="_blank" rel="noopener" class="btn btn--ghost btn--sm">Live Demo</a>
+            }
+            @if (project.repoUrl) {
+              <a [href]="project.repoUrl" target="_blank" rel="noopener" class="btn btn--ghost btn--sm">Source Code</a>
+            }
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>
