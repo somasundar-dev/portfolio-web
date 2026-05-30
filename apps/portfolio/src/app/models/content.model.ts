@@ -17,7 +17,7 @@ export interface AboutContent {
 export interface Skill {
   id: string;
   name: string;
-  category: 'Backend' | 'Cloud' | 'DevOps' | 'Frontend' | 'Databases';
+  category: "Backend" | "Cloud" | "DevOps" | "Frontend" | "Databases";
   level: number;
   sortOrder: number;
   published: boolean;
@@ -44,9 +44,9 @@ export interface ExperienceEntry {
   id: string;
   role: string;
   company: string;
+  domain: string;
   startDate: string;
   endDate: string;
-  achievements: string[];
   technologies: string[];
   sortOrder: number;
   published: boolean;
@@ -68,7 +68,7 @@ export interface ContactSubmission {
   subject: string;
   message: string;
   createdAt: string;
-  status: 'new' | 'read' | 'archived';
+  status: "new" | "read" | "archived";
 }
 
 export interface PublicContent {

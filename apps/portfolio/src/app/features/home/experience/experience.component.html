@@ -1,0 +1,38 @@
+<section id="experience" class="section experience">
+    <div class="container">
+        <div class="section-header" appScrollReveal>
+            <span class="section-label">Experience</span>
+            <h2 class="section-title">Career Journey</h2>
+        </div>
+
+        <div class="timeline">
+            @for (entry of experience(); track entry.id; let i = $index; let last = $last) {
+            <div class="timeline__item" appScrollReveal>
+                <div class="timeline__marker">
+                    <div class="timeline__dot"></div>
+                    @if (!last) { <div class="timeline__line"></div> }
+                </div>
+
+                <div class="glass-card timeline__content">
+                    <div class="timeline__header">
+                        <div>
+                            <h3 class="timeline__role">{{ entry.role }}</h3>
+                            <p class="timeline__company">{{ entry.company }}</p>
+                            @if (entry.domain) {
+                                <p class="timeline__domain">{{ entry.domain }}</p>
+                            }
+                        </div>
+                        <span class="timeline__date">{{ entry.startDate }} — {{ entry.endDate }}</span>
+                    </div>
+
+                    <div class="timeline__tech">
+                        @for (tech of entry.technologies; track tech) {
+                        <span class="chip">{{ tech }}</span>
+                        }
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</section>
