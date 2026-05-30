@@ -122,7 +122,7 @@ export const SAMPLE_CONTENT: PublicContent = {
     },
     {
       id: "e2",
-      role: "Technical Lead",
+      role: "Project Manager",
       company: "Novac Technology Solutions",
       domain: "Retail, Inventory & Finance Management",
       startDate: "08/2024",
@@ -140,7 +140,7 @@ export const SAMPLE_CONTENT: PublicContent = {
     },
     {
       id: "e3",
-      role: "Dotnet Developer/Web Developer",
+      role: "Dotnet Developer / Web Developer",
       company: "Shreyas Technology Solutions",
       domain: "Travel & Aviation",
       startDate: "09/2019",
