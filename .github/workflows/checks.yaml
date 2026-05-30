@@ -2,9 +2,13 @@ name: Profolio CI Checks
 
 on:
   push:
+    paths:
+      - 'apps/portfolio/**'
     branches-ignore:
       - main
   pull_request:
+    paths:
+      - 'apps/portfolio/**'
     branches:
       - main
 
