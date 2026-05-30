@@ -6,15 +6,15 @@ export const SAMPLE_CONTENT: PublicContent = {
     name: "Somasundar",
     title: "Senior Software Engineer",
     tagline:
-      "Building cloud-native systems with .NET, Angular & AWS — 7+ years crafting scalable, production-grade software.",
+      "Building cloud-native systems with .NET, Angular & AWS — 7 years crafting scalable, production-grade software.",
     ctaPrimary: "View Projects",
     ctaSecondary: "Contact Me",
   },
   about: {
     id: "about-1",
-    bio: "I am a software engineer passionate about building robust backend systems and elegant cloud architectures. With 7+ years of experience in .NET and Azure, I now deliver modern cloud-native solutions using Angular and AWS.",
+    bio: "I am a software engineer passionate about building robust backend systems and elegant cloud architectures. With 7 years of experience in .NET and Azure, I now deliver modern cloud-native solutions using Angular and AWS.",
     experienceSummary:
-      "7+ years delivering enterprise applications, microservices, and DevOps pipelines across finance and SaaS domains.",
+      "7 years delivering enterprise applications, microservices, and DevOps pipelines across finance and SaaS domains.",
     strengths: [
       "Backend architecture with .NET Core & microservices",
       "Cloud infrastructure on AWS",
