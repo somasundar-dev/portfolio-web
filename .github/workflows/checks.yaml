@@ -1,0 +1,14 @@
+name: Profolio CI Checks
+
+on:
+  push:
+  pull_request:
+    branches: [main]
+
+jobs:
+    build-portfolio:
+        uses: somasundar-dev/devops-toolkit/.github/workflows/angular-ci.yaml@main
+        with:
+            node-version: '19'
+
+    
