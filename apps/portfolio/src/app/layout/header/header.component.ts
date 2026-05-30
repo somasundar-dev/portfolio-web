@@ -1,5 +1,11 @@
-import { Component, HostListener, OnDestroy, OnInit, signal } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {
+  Component,
+  HostListener,
+  OnDestroy,
+  OnInit,
+  signal,
+} from "@angular/core";
+import { CommonModule } from "@angular/common";
 
 interface NavItem {
   id: string;
@@ -7,28 +13,29 @@ interface NavItem {
 }
 
 @Component({
-  selector: 'app-header',
+  selector: "app-header",
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss'],})
+  templateUrl: "./header.component.html",
+  styleUrls: ["./header.component.scss"],
+})
 export class HeaderComponent implements OnInit, OnDestroy {
   readonly navItems: NavItem[] = [
-    { id: 'about', label: 'About' },
-    { id: 'skills', label: 'Skills' },
-    { id: 'projects', label: 'Projects' },
-    { id: 'experience', label: 'Experience' },
-    { id: 'github', label: 'GitHub' },
-    { id: 'contact', label: 'Contact' },
+    { id: "about", label: "About" },
+    { id: "skills", label: "Skills" },
+    // { id: 'projects', label: 'Projects' },
+    { id: "experience", label: "Experience" },
+    { id: "github", label: "Projects" },
+    { id: "contact", label: "Contact" },
   ];
 
   readonly isScrolled = signal(false);
   readonly menuOpen = signal(false);
-  readonly activeSection = signal('hero');
+  readonly activeSection = signal("hero");
 
   private observer?: IntersectionObserver;
 
-  @HostListener('window:scroll')
+  @HostListener("window:scroll")
   onScroll(): void {
     this.isScrolled.set(window.scrollY > 50);
   }
@@ -42,10 +49,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
           }
         });
       },
-      { threshold: 0.3, rootMargin: '-80px 0px -40% 0px' }
+      { threshold: 0.3, rootMargin: "-80px 0px -40% 0px" },
     );
 
-    ['hero', ...this.navItems.map((n) => n.id)].forEach((id) => {
+    ["hero", ...this.navItems.map((n) => n.id)].forEach((id) => {
       const el = document.getElementById(id);
       if (el) this.observer?.observe(el);
     });
@@ -58,7 +65,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   scrollTo(id: string, event: Event): void {
     event.preventDefault();
     this.menuOpen.set(false);
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   }
 
   toggleMenu(): void {
