@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "start": "ng serve portfolio",
+    "ng": "ng",
     "test": "ng test",
     "lint": "ng lint",
     "build": "ng build portfolio --configuration production"
