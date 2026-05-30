@@ -1,18 +1,18 @@
 <section id="github" class="section github">
   <div class="container">
     <div class="section-header" appScrollReveal>
-      <span class="section-label">GitHub</span>
-      <h2 class="section-title">Open Source & Activity</h2>
+      <h2 class="section-title">GitHub</h2>
+      <h2 class="section-label">Featured Repositories</h2>
     </div>
 
-    <div class="github__grid">
+    <!-- <div class="github__grid">
       @for (stat of stats; track stat.label) {
         <div class="glass-card github__stat" appScrollReveal>
           <span class="github__stat-value">{{ stat.value }}</span>
           <span class="github__stat-label">{{ stat.label }}</span>
         </div>
       }
-    </div>
+    </div> -->
 
     <div class="github__repos" appScrollReveal>
       @for (repo of repos; track repo.name) {
@@ -27,10 +27,6 @@
             }
           </div>
           <p class="github__repo-desc">{{ repo.description }}</p>
-          <div class="github__repo-meta">
-            <span>★ {{ repo.stars }}</span>
-            <span>⑂ {{ repo.forks }}</span>
-          </div>
         </a>
       }
     </div>
